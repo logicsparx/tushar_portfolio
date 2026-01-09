@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tushar Ahire | Portfolio</title>
-
+<link rel="icon" href="icon.jpeg" style="width: fit-content;">
 
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
@@ -101,7 +101,6 @@ nav{
   backdrop-filter:blur(10px);
   padding:15px 50px;
   display:flex;
-  justify-content:space-between;
   align-items:center;
   z-index:1000;
 }
@@ -109,6 +108,27 @@ nav h1{font-family:cursive;color:var(--neon)}
 nav ul{display:flex;gap:25px;list-style:none}
 nav ul li a:hover{color:var(--neon)}
 
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 22px;
+  font-weight: 600;
+  color: #00ffcc;
+  margin-right: 10px;
+  margin-left: -10px;
+}
+
+.logo img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.logo img:hover {
+  box-shadow: 0 0 10px #00ffcc;
+  transition: 0.3s ease;
+}
 
 .hero{
   height:100vh;
@@ -264,6 +284,9 @@ footer{
 <body>
 
 <nav>
+  <div class="logo">
+    <img src="icon.jpeg" alt="Logic Sparx Logo">
+  </div>
   <h1>Logic Sparx</h1>
   <ul>
     <li><a href="#about">About</a></li>
@@ -457,4 +480,5 @@ function closeCert(){
 
 </body>
 </html>
+
 
