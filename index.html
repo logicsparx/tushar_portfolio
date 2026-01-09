@@ -6,6 +6,7 @@
 <title>Tushar Ahire | Portfolio</title>
 <link rel="icon" href="icon.jpeg" style="width: fit-content;">
 
+
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
@@ -96,17 +97,30 @@ a{text-decoration:none;color:inherit}
 
 nav{
   position:fixed;
-  top:0;width:100%;
-  background:rgba(32, 33, 33, 0.85);
+  top:0;
+  width:100%;
+  background:rgba(32,33,33,0.85);
   backdrop-filter:blur(10px);
   padding:15px 50px;
   display:flex;
   align-items:center;
   z-index:1000;
+
+
+  position: relative;
 }
+
 nav h1{font-family:cursive;color:var(--neon)}
-nav ul{display:flex;gap:25px;list-style:none}
+
+nav ul{
+  display:flex;
+  margin-left:auto;
+  gap:25px;
+  list-style:none;
+}
 nav ul li a:hover{color:var(--neon)}
+
+
 
 .logo {
   display: flex;
@@ -129,6 +143,8 @@ nav ul li a:hover{color:var(--neon)}
   box-shadow: 0 0 10px #00ffcc;
   transition: 0.3s ease;
 }
+
+
 
 .hero{
   height:100vh;
@@ -278,6 +294,50 @@ footer{
   section{padding:80px 8%}
   .hero h2{font-size:2.3rem}
 }
+.hamburger{display:none;}
+
+@media (max-width:768px){
+  .nav-links{display:none;}
+
+  .hamburger{
+    display:flex;
+    flex-direction:column;
+    cursor:pointer;
+    position:absolute;
+    right:20px;
+    top:18px;
+    z-index:3000;
+  }
+
+  .hamburger span{
+    height:3px;
+    width:25px;
+    background:#00f7ff;
+    margin:4px 0;
+    border-radius:5px;
+  }
+}
+
+.mobile-menu{
+  position:fixed;
+  top:70px;
+  right:-100%;
+  width:220px;
+  height:100vh;
+  background:rgba(0,0,0,0.95);
+  display:flex;
+  flex-direction:column;
+  padding:30px;
+  transition:.3s ease;
+  z-index:2000;
+}
+.mobile-menu a{
+  color:#00f7ff;
+  margin:15px 0;
+  font-size:18px;
+}
+.mobile-menu.active{right:0}
+
 </style>
 </head>
 
@@ -287,15 +347,31 @@ footer{
   <div class="logo">
     <img src="icon.jpeg" alt="Logic Sparx Logo">
   </div>
+
   <h1>Logic Sparx</h1>
-  <ul>
+
+  <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#certs">Certifications</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#experience">Experience</a></li>
   </ul>
+
+  <div class="hamburger" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
 </nav>
+
+<div class="mobile-menu">
+  <a href="#about" onclick="toggleMenu()">About</a>
+  <a href="#certs" onclick="toggleMenu()">Certifications</a>
+  <a href="#skills" onclick="toggleMenu()">Skills</a>
+  <a href="#projects" onclick="toggleMenu()">Projects</a>
+  <a href="#experience" onclick="toggleMenu()">Experience</a>
+</div>
 
 <section class="hero">
   <div>
@@ -413,7 +489,7 @@ footer{
     <div class="card project-card"><h4>Phishing Risk Analyzer</h4><p>Cybersecurity</p><a href="https://github.com/logicsparx/BitBytes-Phishing-Risk-Analyzer">GitHub →</a></div>
     <div class="card project-card"><h4>Stock Market Predictive Analysis</h4><p>Data analysis.</p><a href="https://github.com/logicsparx/Predictive-Analytics">GitHub →</a></div>
     <div class="card project-card"><h4>Sentiment Analysis for Amazon Product Reviews</h4><p>Data Analysis</p><a href="https://github.com/logicsparx/Sentiment-Analysis">GitHub →</a></div>
-    <div class="card project-card"><h4>Portfolio Website</h4><p>Web Development</p><a href="https://logicsparx.github.io/tushar_portfolio/">View Site →</a></div>
+    <div class="card project-card"><h4>Portfolio Website</h4><p>Web Development</p><a href="#">View Site →</a></div>
     <div class="card project-card"><h4>Dance Academy Website</h4><p>Web Development</p><a href="https://logicsparx.github.io/UDC-Dance-Academy/">View Site →</a></div>
   </div>
 </section>
@@ -477,8 +553,11 @@ function closeCert(){
 }
 </script>
 
+<script>
+function toggleMenu() {
+  document.querySelector('.mobile-menu').classList.toggle('active');
+}
+</script>
 
 </body>
 </html>
-
-
