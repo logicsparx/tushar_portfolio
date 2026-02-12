@@ -1,0 +1,190 @@
+/* ===============================
+   GLOBAL
+================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000000;
+    font-family: 'Poppins', sans-serif;
+    color: #ffffff;
+}
+
+/* ===============================
+   NAVBAR (MATCH INDEX STYLE)
+================================= */
+
+.navbar {
+    width: 100%;
+    padding: 25px 0;
+    background:rgba(32,33,33,0.85)
+}
+
+.nav-container {
+    width: 85%;
+    max-width: 1200px;
+    margin: auto;
+    background: linear-gradient(90deg, #0b1c3d, #08162e);
+    padding: 18px 40px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: rgb(0, 247, 255);
+}
+
+/* Nav Links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #cbd5e1;
+    font-size: 1rem;
+    font-weight: 500;
+    padding-bottom: 6px;
+    position: relative;
+    transition: 0.3s ease;
+}
+
+/* Underline animation */
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    left: 0;
+    bottom: 0;
+    background: #38bdf8;
+    transition: 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: rgb(0, 247, 255);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* Active */
+.nav-links a.active {
+    color: rgb(0, 247, 255);
+}
+
+.nav-links a.active::after {
+    width: 100%;
+}
+
+/* ===============================
+   HAMBURGER
+================================= */
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: rgb(0, 247, 255);
+    border-radius: 3px;
+}
+
+/* ===============================
+   EDUCATION SECTION
+================================= */
+
+.education {
+    width: 85%;
+    max-width: 1000px;
+    margin: 30px auto;
+
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: rgb(0, 247, 255);
+    margin-bottom: 50px;
+}
+
+/* Education Card */
+.edu-card {
+    background:var(--card);
+    padding: 30px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    border:2px solid rgba(0, 247, 255, 0.163);
+    transition: 0.3s ease;
+}
+
+.edu-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
+}
+
+.edu-card h2 {
+    color: rgb(0, 247, 255);
+    margin-bottom: 8px;
+}
+
+.edu-card h3 {
+    color: #94a3b8;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.edu-card p {
+    color: #cbd5e1;
+}
+
+/* ===============================
+   RESPONSIVE
+================================= */
+
+@media (max-width: 768px) {
+
+    .nav-container {
+        padding: 15px 20px;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 95px;
+        right: 7%;
+        background: linear-gradient(90deg, #0b1c3d, #08162e);
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px 30px;
+        border-radius: 8px;
+        display: none;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .education {
+        width: 90%;
+    }
+}
